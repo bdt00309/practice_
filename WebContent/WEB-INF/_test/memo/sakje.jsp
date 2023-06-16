@@ -13,7 +13,7 @@
 <h2>메모 삭제</h2>
 
 <form name="form">
-<input type="hidden" name="memoNo" value="${resultDto.memoNo }" >
+<input type="hidden" name="no" value="${resultDto.no }" >
 <table border="1">
 	<tr>
 		<td>작성자</td>

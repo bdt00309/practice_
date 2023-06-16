@@ -21,8 +21,8 @@
 	</tr>
 	<c:forEach var="dto" items="${list }">
 		<tr>
-			<td>${dto.memoNo }</td>
-			<td><a href="#" onclick="move('view', '${dto.memoNo }');">${dto.writer }</a></td>	
+			<td>${dto.no }</td>
+			<td><a href="#" onclick="move('view', '${dto.no}');">${dto.writer }</a></td>	
 			<td>${dto.content }</td>
 			<td>${dto.regiDate }</td>
 		</tr>

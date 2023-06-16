@@ -51,12 +51,12 @@ public class MemoController extends HttpServlet {
 			rd.forward(request, response);
 
 		} else if (imsiUrl.equals("view")) {
-			String memoNo_ = request.getParameter("memoNo");
-			int memoNo = Integer.parseInt(memoNo_);
+			String no_ = request.getParameter("no");
+			int no = Integer.parseInt(no_);
 			
 			
 			MemoDTO dto = new MemoDTO();
-			dto.setMemoNo(memoNo);
+			dto.setNo(no);
 			
 			MemoDAO dao = new MemoDAO();
 			MemoDTO resultDto = dao.getSelectOne(dto);
@@ -114,12 +114,12 @@ public class MemoController extends HttpServlet {
 			}
 
 		} else if (imsiUrl.equals("sujung")) {
-			String memoNo_ = request.getParameter("memoNo");
-			int memoNo = Integer.parseInt(memoNo_);
+			String no_ = request.getParameter("no");
+			int no = Integer.parseInt(no_);
 			
 			
 			MemoDTO dto = new MemoDTO();
-			dto.setMemoNo(memoNo);
+			dto.setNo(no);
 			
 			MemoDAO dao = new MemoDAO();
 			MemoDTO resultDto = dao.getSelectOne(dto);
@@ -130,8 +130,9 @@ public class MemoController extends HttpServlet {
 			rd.forward(request, response);
 			
 		} else if (imsiUrl.equals("sujungProc")) {
-			String memoNo_ = request.getParameter("memoNo");
-			int memoNo = Integer.parseInt(memoNo_);
+			String no_ = request.getParameter("no");
+			int no = Integer.parseInt(no_);
+		
 			String writer = request.getParameter("writer");
 			String content = request.getParameter("content");
 			// ------
@@ -158,7 +159,7 @@ public class MemoController extends HttpServlet {
 			content = content.replace("\'", "&apos;");
 
 			MemoDTO dto = new MemoDTO();
-			dto.setMemoNo(memoNo);
+			dto.setNo(no);
 			dto.setWriter(writer);
 			dto.setContent(content);
 
@@ -166,18 +167,18 @@ public class MemoController extends HttpServlet {
 			int result = dao.setUpdate(dto);
 
 			if (result > 0) {
-				response.sendRedirect(path + "/memo/view?memoNo=" + memoNo);
+				response.sendRedirect(path + "/memo/view?no=" + no);
 				return;
 			} else {
-				response.sendRedirect(path + "/memo/sujung?memoNo=" + memoNo);
+				response.sendRedirect(path + "/memo/sujung?no=" + no);
 				return;
 			}
 		} else if (imsiUrl.equals("sakje")) {
-			String memoNo_ = request.getParameter("memoNo");
-			int memoNo = Integer.parseInt(memoNo_);
+			String no_ = request.getParameter("no");
+			int no = Integer.parseInt(no_);
 						
 			MemoDTO dto = new MemoDTO();
-			dto.setMemoNo(memoNo);
+			dto.setNo(no);
 			
 			MemoDAO dao = new MemoDAO();
 			MemoDTO resultDto = dao.getSelectOne(dto);
@@ -188,11 +189,11 @@ public class MemoController extends HttpServlet {
 			rd.forward(request, response);
 
 		} else if (imsiUrl.equals("sakjeProc")) {
-			String memoNo_ = request.getParameter("memoNo");
-			int memoNo = Integer.parseInt(memoNo_);
+			String no_ = request.getParameter("no");
+			int no = Integer.parseInt(no_);
 			
 			MemoDTO dto = new MemoDTO();
-			dto.setMemoNo(memoNo);
+			dto.setNo(no);
 			
 			MemoDAO dao = new MemoDAO();
 			int result = dao.setDelete(dto);
@@ -201,7 +202,7 @@ public class MemoController extends HttpServlet {
 				response.sendRedirect(path + "/memo/list");
 				return;
 			} else {
-				response.sendRedirect(path + "/memo/sakje?memoNo=" + memoNo);
+				response.sendRedirect(path + "/memo/sakje?no=" + no);
 				return;
 			}
 			

@@ -3,6 +3,6 @@
     
 <script>
 function move(value1, value2) {
-	location.href= "${path}/memo/"+ value1 + "?memoNo=" + value2;
+	location.href= "${path}/memo/"+ value1 + "?no=" + value2;
 }
 </script>

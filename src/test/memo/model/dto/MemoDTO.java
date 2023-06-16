@@ -4,17 +4,17 @@ import java.sql.Date;
 
 public class MemoDTO {
 
-	private int memoNo;
+	private int no;
 	private String writer;
 	private String content;
 	private Date regiDate;
 	
 	
-	public int getMemoNo() {
-		return memoNo;
+	public int getNo() {
+		return no;
 	}
-	public void setMemoNo(int memoNo) {
-		this.memoNo = memoNo;
+	public void setNo(int no) {
+		this.no = no;
 	}
 	public String getWriter() {
 		return writer;

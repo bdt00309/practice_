@@ -13,11 +13,11 @@
 <body>
 
 <h2>메모 상세보기</h2>
-<input type="hidden" name="memoNo" value="${resultDto.memoNo }" >
+<input type="hidden" name="no" value="${resultDto.no }" >
 <table border="1">
 	<tr>
 		<td>No</td>
-		<td>${resultDto.memoNo }</td>
+		<td>${resultDto.no }</td>
 	</tr>
 	<tr>
 		<td>작성자</td>
@@ -39,9 +39,9 @@
 |
 <a href="#" onclick="move('chuga', '');">등록</a>
 |
-<a href="#" onclick="move('sujung', '${resultDto.memoNo}');">수정</a>
+<a href="#" onclick="move('sujung', '${resultDto.no}');">수정</a>
 |
-<a href="#" onclick="move('sakje', '${resultDto.memoNo}');">삭제</a>
+<a href="#" onclick="move('sakje', '${resultDto.no}');">삭제</a>
 </div>	
 </body>
 </html>
